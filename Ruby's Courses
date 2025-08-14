@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import './App.css';
+import Header from './Header';
+import Footer from './Footer';
+import CourseList from './CourseList';
+
+function App() {
+  const [courses] = useState([
+    { id: 1, title: 'HTML & CSS Basics', description: 'Learn the building blocks of web design.' },
+    { id: 2, title: 'JavaScript for Beginners', description: 'Understand the language of the web.' },
+    { id: 3, title: 'React.js Fundamentals', description: 'Create interactive UIs with React.' },
+    { id: 4, title: 'Node.js Backend', description: 'Learn server-side programming with Node.' }
+  ]);
+
+  return (
+    <div className="app">
+      <Header />
+      <main>
+        <h2>Available Courses</h2>
+        <CourseList courses={courses} />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
